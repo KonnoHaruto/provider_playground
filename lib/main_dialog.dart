@@ -8,6 +8,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'dialog app',
       home: HomePage(),
     );
@@ -20,8 +21,29 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Show you dialog'),
+      body: ElevatedButton(
+        child: Center(
+          child: Container(
+            child: const Text('Happy Dialog!', style: TextStyle(fontSize: 50),),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+          ),
+        ),
+        onPressed: () {
+          showDialog<void>(
+            context: context,
+            builder: (context) {
+            final mediaQuery = MediaQuery.of(context);
+            return MediaQuery(
+              data: mediaQuery.copyWith(
+                viewInsets: mediaQuery.viewInsets +
+                const EdgeInsets.symmetric(horizontal: 50, vertical: 300),
+              ),
+            child: const AlertDialog(
+              content: Center(child: Text('Happy Dialog!!', style: TextStyle(fontSize: 30),),),
+              backgroundColor: Colors.yellow,
+            ));
+          });
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -37,7 +59,7 @@ class HomePage extends StatelessWidget {
                     ),*/
                     data: mediaQuery.copyWith(
                       viewInsets: mediaQuery.viewInsets +
-                      const EdgeInsets.symmetric(horizontal: 100),
+                          const EdgeInsets.symmetric(horizontal: 100),
                     ),
                     child: const AlertDialog(
                       content: Text('Hello Dialog!'),
