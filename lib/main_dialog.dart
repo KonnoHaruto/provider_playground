@@ -8,6 +8,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      title: 'dialog app',
       home: HomePage(),
     );
   }
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Show you dialog'),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //showDialog<T> Tはダイアログの表示結果の戻り値
@@ -37,6 +40,7 @@ class HomePage extends StatelessWidget {
                     ));
               });
         },
+        child: const Icon(Icons.info),
       ),
     );
   }
