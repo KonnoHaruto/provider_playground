@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 part 'state.freezed.dart';
