@@ -95,23 +95,15 @@ class __$CounterCopyWithImpl<$Res> extends _$CounterCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Counter with DiagnosticableTreeMixin implements _Counter {
+class _$_Counter implements _Counter {
   const _$_Counter({required this.count});
 
   @override
   final int count;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Counter(count: $count)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Counter'))
-      ..add(DiagnosticsProperty('count', count));
   }
 
   @override
