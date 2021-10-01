@@ -31,9 +31,13 @@ class HomePage extends StatelessWidget {
               builder: (context) {
                 final mediaQuery = MediaQuery.of(context);
                 return MediaQuery(
+                    /*data: MediaQuery.of(context).copyWith(
+                      viewInsets: MediaQuery.of(context).viewInsets +
+                          const EdgeInsets.symmetric(horizontal: 100),
+                    ),*/
                     data: mediaQuery.copyWith(
                       viewInsets: mediaQuery.viewInsets +
-                          const EdgeInsets.symmetric(horizontal: 100),
+                      const EdgeInsets.symmetric(horizontal: 100),
                     ),
                     child: const AlertDialog(
                       content: Text('Hello Dialog!'),
