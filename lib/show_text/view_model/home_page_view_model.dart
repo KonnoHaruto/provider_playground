@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:provider_playground/show_text/model/text_list.dart';
+
+import '../model/text_list.dart';
 
 
 final myProvider = StateNotifierProvider<TextListViewModel, TextList>(
