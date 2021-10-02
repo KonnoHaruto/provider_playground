@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'view/add_page_view.dart';
+import 'view/home_page_view.dart';
+
 void main() => runApp(const ProviderScope(child: App()));
 
 class App extends StatelessWidget {
@@ -8,31 +11,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Show_Text_App',
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends ConsumerWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: const Text(
-            'テキスト',
-            style: TextStyle(fontSize: 30),
-          ),
-          decoration: const BoxDecoration(
-            color: Colors.blue,
-          ),
-        ),
-      ),
+      home: const HomePage(),
+      routes: <String, WidgetBuilder> {
+        '/a': (context) => const AddPage(),
+      },
     );
   }
 }
